@@ -2,19 +2,35 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Sabores de Mamá — Reserva y pago
 
-This contains everything you need to run your app locally.
+Aplicación React + Vite con servidor Express (`server.ts`) para servir frontend y endpoint de pago.
 
-View your app in AI Studio: https://ai.studio/apps/8e969601-09fa-403a-8d52-8946f650ba24
+## Requisitos
 
-## Run Locally
+- Node.js 20+
 
-**Prerequisites:**  Node.js
+## Variables de entorno
 
+Crear un archivo `.env.local` (o variables del sistema) con:
 
-1. Install dependencies:
+- `STRIPE_SECRET_KEY` (requerida para `/api/create-payment-intent`)
+- `GEMINI_API_KEY` (si se usa funcionalidad de Gemini)
+
+## Desarrollo
+
+1. Instalar dependencias:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Iniciar entorno de desarrollo:
    `npm run dev`
+3. Abrir:
+   `http://localhost:3000`
+
+## Lanzamiento (producción)
+
+1. Construir frontend:
+   `npm run build`
+2. Iniciar servidor:
+   `npm start`
+
+El servidor usa `PORT` si está definida; por defecto `3000`.
